@@ -14,8 +14,15 @@
   --history-hover: #3a3a3c;
   --radius-btn: 50%;
   --gap: 12px;
-  /* ボタンサイズ = (画面幅 - 左右padding×2 - 列間gap×3) ÷ 4 */
-  --btn-size: calc((100vw - 5 * var(--gap)) / 4);
+  /*
+    ボタンサイズ = 幅制限と高さ制限の小さい方
+    ・幅: (画面幅 - 左右padding×2 - 列間gap×3) ÷ 4列
+    ・高: (画面高 - ディスプレイ～パディング固定分) ÷ 5行
+  */
+  --btn-size: min(
+    calc((100vw - 5 * var(--gap)) / 4),
+    calc((100dvh - 230px) / 5)
+  );
 }
 
 * {
@@ -39,7 +46,8 @@ body {
   background: var(--bg);
   width: 100%;
   max-width: 420px;
-  min-height: 100dvh;
+  height: 100dvh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -52,8 +60,7 @@ body {
   padding: 12px 16px 8px;
   display: flex;
   flex-direction: column;
-  min-height: 120px;
-  max-height: 280px;
+  min-height: 0;
 }
 
 #history-list {
@@ -213,9 +220,14 @@ body {
 
 /* ── レスポンシブ ────────────────────────── */
 
-/* PC：420px超ではボタンサイズを固定 */
+/* PC：420px超では幅方向を420px固定、高さ制限は継続 */
 @media (min-width: 420px) {
-  :root { --btn-size: calc((420px - 5 * var(--gap)) / 4); }
+  :root {
+    --btn-size: min(
+      calc((420px - 5 * var(--gap)) / 4),
+      calc((100dvh - 230px) / 5)
+    );
+  }
 }
 
 /* 縦が小さい画面 */
