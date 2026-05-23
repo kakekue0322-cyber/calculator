@@ -170,7 +170,7 @@ body {
 }
 
 .btn {
-  height: var(--btn-size);
+  aspect-ratio: 1;
   border: none;
   border-radius: var(--radius-btn);
   font-size: 24px;
@@ -181,6 +181,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .btn:active {
@@ -201,20 +202,21 @@ body {
 /* 0ボタンは横2マス */
 .btn-zero {
   grid-column: span 2;
-  border-radius: calc(var(--btn-size) / 2);
+  aspect-ratio: unset;
+  border-radius: 9999px;
   justify-content: flex-start;
   padding-left: 26px;
 }
 
 /* ── レスポンシブ（小さい画面） ─────────── */
 @media (max-height: 700px) {
-  :root { --btn-size: 60px; --gap: 10px; }
+  :root { --gap: 10px; }
   #result { font-size: 52px; }
   #history-area { max-height: 180px; }
 }
 
 @media (max-height: 580px) {
-  :root { --btn-size: 52px; --gap: 8px; }
+  :root { --gap: 8px; }
   #result { font-size: 44px; }
   #history-area { max-height: 120px; }
 }
