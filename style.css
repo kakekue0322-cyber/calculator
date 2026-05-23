@@ -108,6 +108,14 @@ body {
   padding: 16px 0;
 }
 
+#history-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  min-height: 32px;
+}
+
 #clear-history {
   background: none;
   border: 1px solid #636366;
@@ -116,14 +124,24 @@ body {
   padding: 6px 14px;
   border-radius: 20px;
   cursor: pointer;
-  align-self: center;
-  margin-top: 8px;
   transition: border-color 0.15s, color 0.15s;
 }
 
 #clear-history:hover {
   border-color: #ff453a;
   color: #ff453a;
+}
+
+#contact-link {
+  color: #ff9f0a;
+  font-size: 13px;
+  text-decoration: none;
+  margin-left: auto;
+  padding: 4px 2px;
+}
+
+#contact-link:hover {
+  text-decoration: underline;
 }
 
 /* ── ディスプレイ ─────────────────────── */
