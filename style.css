@@ -13,8 +13,9 @@
   --text-history: #ebebf5cc;
   --history-hover: #3a3a3c;
   --radius-btn: 50%;
-  --btn-size: 72px;
   --gap: 12px;
+  /* ボタンサイズ = (画面幅 - 左右padding×2 - 列間gap×3) ÷ 4 */
+  --btn-size: calc((100vw - 5 * var(--gap)) / 4);
 }
 
 * {
@@ -163,14 +164,16 @@ body {
 /* ── ボタンエリア ─────────────────────── */
 #buttons {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, var(--btn-size));
   gap: var(--gap);
   padding: 16px var(--gap) 24px;
   background: var(--bg);
+  justify-content: center;
 }
 
 .btn {
-  aspect-ratio: 1;
+  width: var(--btn-size);
+  height: var(--btn-size);
   border: none;
   border-radius: var(--radius-btn);
   font-size: 24px;
@@ -181,7 +184,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
 }
 
 .btn:active {
@@ -202,13 +204,21 @@ body {
 /* 0ボタンは横2マス */
 .btn-zero {
   grid-column: span 2;
-  aspect-ratio: unset;
+  width: calc(2 * var(--btn-size) + var(--gap));
+  height: var(--btn-size);
   border-radius: 9999px;
   justify-content: flex-start;
-  padding-left: 26px;
+  padding-left: calc(var(--btn-size) * 0.35);
 }
 
-/* ── レスポンシブ（小さい画面） ─────────── */
+/* ── レスポンシブ ────────────────────────── */
+
+/* PC：420px超ではボタンサイズを固定 */
+@media (min-width: 420px) {
+  :root { --btn-size: calc((420px - 5 * var(--gap)) / 4); }
+}
+
+/* 縦が小さい画面 */
 @media (max-height: 700px) {
   :root { --gap: 10px; }
   #result { font-size: 52px; }
