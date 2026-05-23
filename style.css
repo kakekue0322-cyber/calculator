@@ -132,16 +132,38 @@ body {
   color: #ff453a;
 }
 
-#contact-link {
+#footer-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+#share-btn {
+  background: none;
+  border: 1px solid #ff9f0a;
   color: #ff9f0a;
   font-size: 13px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+#share-btn:hover {
+  background: #ff9f0a;
+  color: #000;
+}
+
+#contact-link {
+  color: #636366;
+  font-size: 13px;
   text-decoration: none;
-  margin-left: auto;
   padding: 4px 2px;
 }
 
 #contact-link:hover {
-  text-decoration: underline;
+  color: #ebebf5cc;
 }
 
 /* ── ディスプレイ ─────────────────────── */

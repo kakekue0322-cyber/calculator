@@ -41,6 +41,23 @@ document.getElementById('buttons').addEventListener('click', (e) => {
 
 elClearHistory.addEventListener('click', clearHistory);
 
+// ── シェアボタン ──────────────────────────────────────
+const elShareBtn = document.getElementById('share-btn');
+elShareBtn.addEventListener('click', async () => {
+  const shareData = {
+    title: '計算履歴電卓',
+    text: '計算式が履歴として残せる無料Web電卓🧮 勉強に超便利！インストール不要です',
+    url: 'https://kakekue0322-cyber.github.io/calculator/',
+  };
+  if (navigator.share) {
+    await navigator.share(shareData);
+  } else {
+    await navigator.clipboard.writeText(shareData.url);
+    elShareBtn.textContent = 'コピー完了！';
+    setTimeout(() => { elShareBtn.textContent = 'シェア'; }, 2000);
+  }
+});
+
 // ── 入力ハンドラ ──────────────────────────────────────
 function handleNumber(n) {
   setActiveOperator(null);

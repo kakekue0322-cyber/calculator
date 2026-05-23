@@ -3,7 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>計算履歴電卓</title>
+  <title>計算履歴電卓 — 計算式が残せるWeb電卓</title>
+
+  <!-- SEO -->
+  <meta name="description" content="計算式と結果を履歴として残せる無料Web電卓。勉強中に「どう計算したか」をすぐ振り返れます。インストール不要・スマホ対応。">
+  <meta name="keywords" content="電卓, 計算履歴, 勉強, 無料, Web電卓, 計算式, 高校生, 大学生">
+
+  <!-- OGP（SNSシェア用） -->
+  <meta property="og:title"       content="計算履歴電卓 — 計算式が残せるWeb電卓">
+  <meta property="og:description" content="計算式と結果を履歴として残せる無料Web電卓。インストール不要でスマホからすぐ使えます。">
+  <meta property="og:url"         content="https://kakekue0322-cyber.github.io/calculator/">
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="ja_JP">
+  <meta name="twitter:card"       content="summary">
+  <meta name="twitter:title"      content="計算履歴電卓">
+  <meta name="twitter:description" content="計算式が履歴として残せる無料Web電卓。勉強に便利！">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#ff9f0a">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="履歴電卓">
+
+  <!-- Schema.org 構造化データ（AI検索対策） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "計算履歴電卓",
+    "url": "https://kakekue0322-cyber.github.io/calculator/",
+    "description": "計算式と結果を履歴として残せる無料Web電卓。学生の勉強用途に最適。インストール不要でスマホから利用可能。",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "inLanguage": "ja",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" },
+    "featureList": ["計算履歴保存", "計算式リアルタイム表示", "オフライン動作", "スマホ対応"]
+  }
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,7 +53,10 @@
         <button id="clear-history" aria-label="履歴をすべて削除" style="display:none">
           履歴をクリア
         </button>
-        <a href="contact.html" id="contact-link">お問い合わせ</a>
+        <div id="footer-right">
+          <button id="share-btn" aria-label="アプリをシェア">シェア</button>
+          <a href="contact.html" id="contact-link">お問い合わせ</a>
+        </div>
       </div>
     </div>
 
