@@ -19,9 +19,12 @@
     ・幅: (画面幅 - 左右padding×2 - 列間gap×3) ÷ 4列
     ・高: (画面高 - ディスプレイ～パディング固定分) ÷ 5行
   */
+  /*
+    310px = ディスプレイ(128px) + ボタン上下padding+gap(80px) + 履歴最小確保(100px)
+  */
   --btn-size: min(
     calc((100vw - 5 * var(--gap)) / 4),
-    calc((100dvh - 230px) / 5)
+    calc((100dvh - 310px) / 5)
   );
 }
 
@@ -60,7 +63,7 @@ body {
   padding: 12px 16px 8px;
   display: flex;
   flex-direction: column;
-  min-height: 0;
+  min-height: 100px;
 }
 
 #history-list {
@@ -126,7 +129,7 @@ body {
 /* ── ディスプレイ ─────────────────────── */
 #display {
   background: var(--display-bg);
-  padding: 12px 24px 20px;
+  padding: 12px 24px 8px;
   text-align: right;
 }
 
@@ -173,7 +176,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, var(--btn-size));
   gap: var(--gap);
-  padding: 16px var(--gap) 24px;
+  padding: 8px var(--gap) 24px;
   background: var(--bg);
   justify-content: center;
 }
@@ -225,7 +228,7 @@ body {
   :root {
     --btn-size: min(
       calc((420px - 5 * var(--gap)) / 4),
-      calc((100dvh - 230px) / 5)
+      calc((100dvh - 310px) / 5)
     );
   }
 }
