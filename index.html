@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計算履歴電卓</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+
+    <div id="history-area">
+      <div id="history-list"></div>
+      <button id="clear-history" aria-label="履歴をすべて削除" style="display:none">
+        履歴をクリア
+      </button>
+    </div>
+
+    <div id="display">
+      <div id="expression" aria-label="計算式"></div>
+      <div id="result" aria-label="計算結果">0</div>
+    </div>
+
+    <div id="buttons">
+      <button class="btn btn-function" data-action="ac"   aria-label="すべてクリア">AC</button>
+      <button class="btn btn-function" data-action="sign" aria-label="正負切替">+/-</button>
+      <button class="btn btn-function" data-action="pct"  aria-label="パーセント">%</button>
+      <button class="btn btn-operator" data-action="op"   data-op="÷" aria-label="割り算">÷</button>
+
+      <button class="btn btn-number"   data-action="num"  data-num="7" aria-label="7">7</button>
+      <button class="btn btn-number"   data-action="num"  data-num="8" aria-label="8">8</button>
+      <button class="btn btn-number"   data-action="num"  data-num="9" aria-label="9">9</button>
+      <button class="btn btn-operator" data-action="op"   data-op="×" aria-label="掛け算">×</button>
+
+      <button class="btn btn-number"   data-action="num"  data-num="4" aria-label="4">4</button>
+      <button class="btn btn-number"   data-action="num"  data-num="5" aria-label="5">5</button>
+      <button class="btn btn-number"   data-action="num"  data-num="6" aria-label="6">6</button>
+      <button class="btn btn-operator" data-action="op"   data-op="−" aria-label="引き算">−</button>
+
+      <button class="btn btn-number"   data-action="num"  data-num="1" aria-label="1">1</button>
+      <button class="btn btn-number"   data-action="num"  data-num="2" aria-label="2">2</button>
+      <button class="btn btn-number"   data-action="num"  data-num="3" aria-label="3">3</button>
+      <button class="btn btn-operator" data-action="op"   data-op="+" aria-label="足し算">+</button>
+
+      <button class="btn btn-number btn-zero" data-action="num" data-num="0" aria-label="0">0</button>
+      <button class="btn btn-number"   data-action="dot"  aria-label="小数点">.</button>
+      <button class="btn btn-equal"    data-action="eq"   aria-label="計算実行">=</button>
+    </div>
+
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
