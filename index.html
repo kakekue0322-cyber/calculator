@@ -43,12 +43,22 @@
   </script>
 
   <!-- Google Analytics GA4 -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C49260S08L"></script>
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-C49260S08L');
+    (function() {
+      if (location.search.includes('owner=1')) {
+        localStorage.setItem('owner', '1');
+      }
+      if (localStorage.getItem('owner') !== '1') {
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C49260S08L';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-C49260S08L');
+      }
+    })();
   </script>
 
   <link rel="stylesheet" href="style.css">
